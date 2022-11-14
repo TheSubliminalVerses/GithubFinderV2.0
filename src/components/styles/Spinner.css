@@ -1,0 +1,46 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+.spinner {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.spinner-sector {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 15px solid transparent;
+    mix-blend-mode: overlay;
+    animation: __rotate var(--duration) var(--timing) infinite;
+}
+
+.spinner-sector-dark-blue {
+    border-bottom-color: #2980b9;
+    --duration: 1.5s;
+    --timing: ease-in-out;
+}
+
+.spinner-sector-light-blue {
+    border-top-color: #3498db;
+    --duration: 2s;
+    --timing: ease-in-out;
+}
+
+@keyframes __rotate {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
